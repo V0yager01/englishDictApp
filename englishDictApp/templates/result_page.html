@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+      {%block content %}
+      <h1>Title</h1>
+      {% for answer in answer_list%}
+      <div class="form-container">
+        <div class="rus-veriosn">
+          {{answer.form.rus_version.value}}
+        </div>
+        <div class="eng-answer">
+          <input disabled value="{{answer.form.eng_version.value}}">
+        </div>
+        <div class="answers_status" style="{% if answer.answers_status%} color: green {% else %} color: red {%endif%}">
+          {{answer.answers_status}}
+        </div>
+        <div class="original_answer" style="text-decoration: underline;">
+          <a href="{% url 'dictionaryapp:word_page' answer.original_answer.id %}">
+            {{answer.original_answer.eng_word}}
+          </a>
+        </div>
+      </div>
+      {%endfor%}
+      </form>
+        {%endblock%}

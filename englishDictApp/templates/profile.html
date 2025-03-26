@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Dictionary List</h1>
+<div class="information-block">
+    <div><strong>Your level:</strong> {{ profile.user_level }}</div>
+    <div><strong>Dictionary count:</strong> {{ words_list.count }}</div>
+    <form action="{% url 'user:logout' %}" method="POST">
+      {% csrf_token %}
+      <div class="button-send"><button class="delete" type="submit">Logout</button></div>
+  </form>
+</div>
+<a href="{% url 'trainerapp:contruct' %}" method="GET" class="construct-trainer-block">Test yourself</a>
+<div class="content">
+    {% if words_list %}
+    <form action="{% url 'dictionaryapp:fav_del' %}" method="POST">
+        {% csrf_token %}
+        {% for word in words_list %}
+        <div class="translate-block">
+            <label>{{ word.word.eng_word.word }} - {{ word.word.ru_word.word }}</label>
+            <input type="checkbox" class="myCheckbox" name="words" value="{{ word.id }}">
+        </div>
+        {% endfor %}
+        <div class="button-send"><button class="delete" type="submit">Delete selected</button></div>
+    </form>
+    {% else %}
+    <p>Dictionary is empty</p>
+    {% endif %}
+</div>
+{% endblock %}

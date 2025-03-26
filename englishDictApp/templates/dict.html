@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block content%}
+    <div class="main">
+        <div class="dictionary-container">
+            {% for letter, words in letter_dict.items %}
+                <div class="letter-container">
+                    <div class="dictionary-headers">
+                        <h3>{{ letter }}</h3>
+                    </div>
+                    <div class="words-list">
+                        <div class="words-list-column1">
+                            <ul>
+                                {% for word in words|slice:"::2" %}  
+                                    <li><a href="{%url 'dictionaryapp:word_page' word.id %}">{{ word.eng_word }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="words-list-column2">
+                            <ul>
+                                {% for word in words|slice:"1::2" %}  
+                                    <li><a href="{% url 'dictionaryapp:word_page' word.id %}">{{ word.eng_word }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{%endblock%}
+

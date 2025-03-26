@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block content%}
+<div class="content">
+    <div class="container-ul">
+        <ul>
+{% for category in categories %}
+        <li class="li-index">
+            <a href="{% url 'dictionaryapp:category' category.slug %}">{{category.name}}</a>
+        </li>
+{%endfor%}
+</ul>
+</div>
+</div>
+{% endblock %}

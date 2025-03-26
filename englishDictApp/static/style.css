@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #1c8321;
+}
+
+.left, .right, .translate-block, .category-block, .content {
+  display: flex;
+  gap: 20px;
+}
+
+.left a, .right a {
+  text-decoration: none;
+}
+
+.translate-block {
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.translate-block label {
+  margin-right: 3px;
+}
+
+ul, .container-ul, .ul-translate-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.li-index, .li-translate-container {
+  margin-bottom: 10px;
+}
+
+.li-translate-container {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.word_profile, .form-block {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid black;
+}
+
+.trainer-block, .construct-trainer-block {
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+.trainer {
+  text-align: center;
+}
+
+th, td {
+  text-align: center;
+  padding: 6px;
+  border: 1px solid black;
+}
+
+.register, .password-container, .fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register {
+  margin: 10px;
+  width: 15%;
+}
+
+.register-username {
+  color: red;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.dictionary-container, .words-list {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.dictionary-container {
+  border: 1px solid black;
+  width: 60%;
+}
+
+.dictionary-headers {
+  display: flex;
+  justify-content: center;
+}
+
+.letter-container {
+  border: 1px solid black;
+}
+
+.information-block {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.construct-trainer-block {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.construct-trainer-block:hover {
+  background: #0056b3;
+}
+
+.button-send button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button-send button.delete {
+  background: #dc3545;
+}
+
+.button-send button.delete:hover {
+  background: #c82333;
+}
+
+.button-send button.save {
+  margin: 10px;
+  width: 10%;
+  background: #1a5fdf;
+}
+
+.button-send button.save:hover {
+  background: #003cff;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-block {
+  display: flex;
+  align-items: center;
+  
+}
+.form-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+.fieldWrapper {
+  margin-bottom: 15px;
+}
+.input-labels {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.input-labels label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.input-labels input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.categories {
+  margin-bottom: 15px;
+}
+.categories label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+.button-send button:hover {
+  background: #0056b3;
+}

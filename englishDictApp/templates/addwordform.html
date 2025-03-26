@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-block">
+    <form class="form-container" action="{% url 'dictionaryapp:add_word' %}" method="POST">
+        {% csrf_token %}
+        <div class="fieldWrapper">
+            <div class="" style="color: red;">{{form.eng_version.errors}}</div>
+            <div class="input-labels">
+                {{ form.eng_version.label_tag }}
+                {{ form.eng_version }}
+            </div>
+            <div class="" style="color: red;">{{form.rus_version.errors}}</div>
+            <div class="input-labels">
+                {{ form.rus_version.label_tag }}
+                {{ form.rus_version }}
+            </div>
+        </div>
+        <div class="categories">
+            <div class="" style="color: red;">{{form.category.errors}}</div>
+            <div class="category-block">
+                <div class="">Select category:</div>
+            </div>
+            {% for category in form.category.field.queryset %}
+                <label for="category_{{ category.pk }}">
+                    <input type="checkbox" id="category_{{ category.pk }}" name="category" value="{{ category.pk }}">
+                    {{ category.name }}
+                </label>
+            {% endfor %}
+        </div>
+
+        <div class="button-send">
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

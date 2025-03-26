@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{%block content %}
+<form action="{%url 'trainerapp:trainer' %}" method="GET">
+      {{form}}
+      <button type="submit">Create</button>
+</form> 
+
+{%endblock%}

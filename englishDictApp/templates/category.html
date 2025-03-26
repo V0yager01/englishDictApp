@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+      {%block content %}
+            {% if words %}
+            <form action="{% url 'dictionaryapp:fav' %}" method="POST">
+                  {% csrf_token %}
+                  <div class="button-send"><button class='save' type="submit">Save</button></div>
+                  <input type="hidden" name="category" value="{{category}}">
+                        {% for word in words %}
+                        <div class="translate-block">
+                              <label><a href="{% url 'dictionaryapp:word_page' word.id %}">{{word.eng_word}}</a> - {{word.ru_word}}</label>
+                              <input type="checkbox" class="myCheckbox" data-id="1" name="words", value="{{word.id}}" {% if word.is_favorite %}checked{% endif %}>
+                        </div>
+                        {%endfor%}
+            </form>
+            {% else %}
+            <h1>Category is empty</h1>
+            {% endif %}
+      {%endblock%}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{%block content%}
+<div class="word_profile">
+            <h1 class="word-title"> {{word.eng_word}} ({{word.eng_word.id}})</h1>
+    <p> All translates</p>
+    <form action="{% url 'dictionaryapp:fav' %}" method="POST">
+        {% csrf_token %}
+    <ul class="ul-translate-container">
+        {% for translate in all_translates%}
+        <li class="li-translate-container">
+            {{translate.ru_word.word}}
+            <input type="hidden" name="category" value="{{translate.category}}">
+            <input type="checkbox" class="myCheckbox" data-id="1" name="words", value="{{translate.id}}"
+            {% if translate.id in fav_list %}checked{% endif %}>
+            <div class="category-link">
+                {% for category in translate.category.all %}
+                <a href="{% url 'dictionaryapp:category' category.slug %}">@{{category}}</a>
+                {% endfor %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="button-send"><button type="submit">Save</button></div>
+</form>
+</div>
+
+{% endblock %}`
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+      {%block content %}
+      <h1>Title</h1>
+      <form method="POST" action="{% url 'trainerapp:trainer' %}">
+      {% csrf_token %}
+      {{ formset.management_form }}
+      {% for form in formset%}
+      <div class="form-container">
+        <div hidden>
+          {{form.rus_version}}
+          {{form.id}}
+        </div>
+        {{form.rus_version.value}}
+        {{form.eng_version}}
+      </div>
+      {%endfor%}
+      <button type="submit">Отправить</button>
+      </form>
+        {%endblock%}
