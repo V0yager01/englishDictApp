@@ -80,13 +80,30 @@ th, td {
 }
 
 .register {
-  margin: 10px;
   width: 15%;
+
 }
 
-.register-username {
-  color: red;
+.message-box {
+  display: flex;
+  width: 350px;
+
 }
+
+.message_style_error{
+  color: #ccc;
+  text-shadow: 
+      -1px -1px 0 black,  
+       1px -1px 0 black,  
+      -1px  1px 0 black,  
+       1px  1px 0 black;
+  background-color: #ff0019;
+}
+
+.message_style_success{
+  background-color: green;
+}
+
 
 .main {
   display: flex;
@@ -209,4 +226,11 @@ th, td {
 }
 .button-send button:hover {
   background: #0056b3;
+}
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }

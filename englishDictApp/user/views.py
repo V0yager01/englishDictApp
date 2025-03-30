@@ -12,7 +12,6 @@ def user_registration(request):
         return render(request, 'registration/registration.html', context={'form':form})
     
     form = MyUserCreationForm(request.POST or None)
-    print(form)
     if form.is_valid():
         user = form.save()
         login(request, user)    

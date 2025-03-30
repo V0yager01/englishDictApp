@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 from .models import MyUser, Profile
 
-list
+
 class MyUserCreationForm(UserCreationForm):
     class Meta:
         model = MyUser
@@ -10,10 +10,13 @@ class MyUserCreationForm(UserCreationForm):
         widgets = {
             "username": forms.TextInput(attrs={"class": "register-username", "placeholder":"Username"}),
             "email": forms.TextInput(attrs={"class": "register-email", "placeholder":"Email"}),
-            "password1": forms.PasswordInput(attrs={"class": "register-password1"}),
-            "password2": forms.PasswordInput(attrs={"class": "register-password2"}),
         }
-    
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["password1"].widget.attrs["placeholder"] = "Password"
+        self.fields["password2"].widget.attrs["placeholder"] = "Confirm password"
+  
 
     def save(self, commit = ...):
         user = super().save(commit)
