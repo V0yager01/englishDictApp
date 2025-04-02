@@ -6,11 +6,19 @@
 <h2>Registration form</h2>
 {% if form.errors %}
 <div class="message-box message_style_error">
-{{form.errors}}
+  <ul>
+  {% for field, errors in form.errors.items %}
+  {% for error in errors %}
+  <li>
+    {{error}}
+  </li>
+  {% endfor %}
+{% endfor %}
+</ul>
 </div>
 {% endif %}
 <div class="register">
-  <form method="post">
+  <form method="post" class="register-form">
       {% csrf_token %}
       {{form.email}}
       {{form.username}}

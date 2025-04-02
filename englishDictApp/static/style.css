@@ -73,31 +73,42 @@ th, td {
   border: 1px solid black;
 }
 
-.register, .password-container, .fieldWrapper {
+.register, .password-container, .fieldWrapper{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 .register {
+  margin: 10px;
   width: 15%;
 
 }
 
+.register-form  {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
 .message-box {
+  margin: 10px;
+  padding: 10px;
   display: flex;
   width: 350px;
 
 }
 
 .message_style_error{
-  color: #ccc;
+  color: #ffffff;
   text-shadow: 
       -1px -1px 0 black,  
        1px -1px 0 black,  
       -1px  1px 0 black,  
        1px  1px 0 black;
-  background-color: #ff0019;
+  background-color: #8f212c;
+  border-radius: 10px;
 }
 
 .message_style_success{
