@@ -10,5 +10,6 @@ urlpatterns = [
     path('profile_page/', view=view.profile_page, name='profile'),
     path('register/', view=view.user_registration, name='signup'),
     path("login/", views.LoginView.as_view(), name="login"),
-    path("logout/", views.LogoutView.as_view(next_page='user:login'), name="logout")
+    path("logout/", views.LogoutView.as_view(next_page='user:login'), name="logout"),
+    path('email_verify/<uidb64>/<token>/', view=view.email_verify, name='email_verify'),
 ]

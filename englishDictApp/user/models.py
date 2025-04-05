@@ -12,7 +12,7 @@ user_level = (
 )
 
 class MyUser(AbstractUser):
-    pass
+        is_active = models.BooleanField(default=False)
 
 
 class Profile(models.Model):

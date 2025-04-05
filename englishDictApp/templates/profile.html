@@ -3,6 +3,8 @@
 
 <h1>Dictionary List</h1>
 <div class="information-block">
+    <div><strong>Email:</strong> {{ profile.user.email }}</div>
+    <div><strong>Usermail:</strong> {{ profile.user.username }}</div>
     <div><strong>Your level:</strong> {{ profile.user_level }}</div>
     <div><strong>Dictionary count:</strong> {{ words_list.count }}</div>
     <form action="{% url 'user:logout' %}" method="POST">
